@@ -120,7 +120,136 @@ console.log("Sum of all numbers in an array in IIFE function");
 console.log("-------------------------------------------");
 
 // 04. Return all the prime numbers in an array
+//Function
+//Return all the prime numbers in an array in function
 let pri = [1,2,3,4,5,6,7,8,9,10];
-let pri1 = [11,12,13,14,15,16,17,18,19,20];
-let pri2 =[21,22,23,24,25,26,27,28,29,30];
+var z = pri;
+var prime = [];
 
+function isPrime(prim) {
+    var id = prim / 2;
+      for (var j = 2; j <= id; j++) {
+       if ((prim % j) == 0) { 
+        return false;
+       } 
+     }
+     return true;
+}
+for (var i = 0; i < z.length; i++) {
+  if (isPrime(z[i])) {
+      prime.push(z[i])
+  }
+}
+console.log(prime);
+
+//arrow function
+//Return all the prime numbers in an array in arrow function
+let pri1 = [11,12,13,14,15,16,17,18,19,20];
+var x = pri1;
+var prim = [];
+
+isPrime=(primea)=> {
+    var id = primea / 2;
+      for (var j = 2; j <= id; j++) {
+       if ((primea % j) == 0) { 
+        return false;
+       } 
+     }
+     return true;
+}
+for (var i = 0; i < x.length; i++) {
+  if (isPrime(x[i])) {
+      prim.push(x[i])
+  }
+}
+console.log(prim);
+
+//IIFE
+//Return all the prime numbers in an array in IIFE
+let pri2 =[21,22,23,24,25,26,27,28,29,30];
+var w = pri2;
+var prme = [];
+
+(function isPrime(prm) {
+    var id = prm / 2;
+      for (var j = 2; j <= id; j++) {
+       if ((prm % j) == 0) { 
+        return false;
+       } 
+     }
+     return true;
+})
+for (var i = 0; i < w.length; i++) {
+  if (isPrime(w[i])) {
+      prme.push(w[i])
+  }
+}
+console.log(prme);
+
+console.log("--------------------------------------------");
+
+// 05. Return all the palindromes in an array
+//function
+//Return all the palindromes in an array function
+const ara = ['carecar', 1344, 12321, 'did', 'cannot','mom', 'dad', 'abcde', 'racecar', 'momom'];
+function isPalindrome(elm){
+   const strg = String(elm);
+   let i = 0;
+   let j = strg.length - 1;
+   while(i < j) {
+      if(strg[i] === strg[j]) {
+         i++;
+         j--;
+      }
+      else {
+         return false;
+      }
+   }
+   return true;
+};
+const findPalindrome = ara => {
+   return ara.filter(elm => isPalindrome(elm));
+};
+console.log(findPalindrome(ara));
+
+
+//arrow
+//Return all the palindromes in an array in arrow
+
+const aray = ['did', 'cannot','mom','carecar', 1344, 12321, 'dad', 'abcde', 'racecar', 'momom'];
+const isPalinrome = elmn => {
+   const strg = String(elmn);
+   let i = 0;
+   let j = strg.length - 1;
+   while(i < j) {
+      if(strg[i] === strg[j]) {
+         i++;
+         j--;
+      }
+      else {
+         return false;
+      }
+   }
+   return true;
+};
+const findPalinrome = aray => {
+   return aray.filter(elmn => isPalinrome(elmn));
+};
+console.log(findPalinrome(aray));
+
+//Remove duplicates from an array
+//function
+let anyArr = [1,2,3,3,3,4,5,5];
+
+function arr (array){
+    let duplicate = [...new Set(array)];
+    console.log(duplicate);
+}
+arr(anyArr);
+
+//IIFE
+let anyAr = [6,7,7,7,8,6,9,10,6,7];
+(function(array){
+    let duplicate = [...new Set(array)];
+    console.log(duplicate);
+})(anyAr);
